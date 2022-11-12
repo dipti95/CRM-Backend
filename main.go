@@ -127,7 +127,9 @@ func main() {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", index).Methods("GET")
+	fileserver := http.FileServer(http.Dir("./static"))
+
+	router.HandleFunc("/", fileserver.ServeHTTP).Methods("GET")
 
 	// Getting a list of all customers
 	router.HandleFunc("/customers", getAllCustomer).Methods("GET")
