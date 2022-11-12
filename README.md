@@ -293,10 +293,10 @@ url : DELETE localhost:3000/customers/{id}
 
 Dummy data is in data.go file
 
-# To Start the app
+# To Run Server
 
 ```
-go run main.go data.go
+./CRM-Backend
 ```
 
 ## Packages used
